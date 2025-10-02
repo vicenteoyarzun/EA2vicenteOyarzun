@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -24,6 +26,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.unit.dp
 import com.EA2vicenteOyarzun.ui.theme.EA2vicenteOyarzunTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,11 +40,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TextBox(){
     var txt by remember { mutableStateOf("") }
-    TextField(
-        value = txt,
-        onValueChange = {
-            it -> txt = it
-        },
-        label = {Text("caca")}
-    )
+    Column {
+        Spacer(modifier = Modifier.padding(12.dp))
+        TextField(
+            value = txt,
+            onValueChange = { it ->
+                txt = it
+            },
+            label = { Text("caca") }
+        )
+    }
 }
