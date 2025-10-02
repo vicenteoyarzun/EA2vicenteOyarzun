@@ -61,7 +61,7 @@ fun TextBox(){
 @Composable
 fun LayoutMain(){
     Column(
-        Modifier.fillMaxHeight().background(Color.Red),
+        Modifier.fillMaxHeight().background(Color.Green),
         verticalArrangement = Arrangement.Center
     ) {
         Row(
