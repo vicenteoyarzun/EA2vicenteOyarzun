@@ -24,25 +24,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-
+import com.EA2vicenteOyarzun.ui.theme.EA2vicenteOyarzunTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            InvocarTextField()
+            TextBox()
+        }
         }
     }
-}
+@Preview
 @Composable
-fun InvocarTextField(){
-    var text by remember { mutableStateOf("") }
+fun TextBox(){
+    var txt by remember { mutableStateOf("") }
     TextField(
-        value = text,
+        value = txt,
         onValueChange = {
-            valor -> text = valor
+            it -> txt = it
         },
-        label = {Text("AAAAAAAAAAA")},
-        leadingIcon = Icon(Icons.Default.AccountBox, contentDescription = null)
+        label = {Text("caca")}
     )
 }
